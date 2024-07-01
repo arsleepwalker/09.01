@@ -1,0 +1,1976 @@
+@font-face {
+    font-family: Cinzel;
+    src: url("../fonts/Cinzel/cinzel_bold.ttf");
+    font-weight: bold;
+  }
+
+@font-face {
+    font-family: Cinzel;
+    src: url("../fonts/Cinzel/cinzel_regular.ttf");
+    font-weight: 400;
+  }
+@font-face {
+    font-family: Cinzel Decorative;
+    src: url("../fonts/Cinzel-Decorative/CinzelDecorative-Black.ttf");
+    font-weight: 900;
+  }
+
+@font-face {
+    font-family: Cinzel Decorative;
+    src: url("../fonts/Cinzel-Decorative/CinzelDecorative-Bold.ttf");
+    font-weight: bold;
+  }
+
+@font-face {
+    font-family: Cinzel Decorative;
+    src: url("../fonts/Cinzel-Decorative/CinzelDecorative-Regular.ttf");
+    font-weight: 400;
+  }
+$color-blue-dark:#032D76;
+$color-blue-light:#AFCEE8;
+$color-purple:#822166;
+$color-gray:#C0C0C0;
+$color-white:#ffffff;
+$gradient1:linear-gradient(#032D76, #822166);
+$gradient2:linear-gradient(#032D76, #AFCEE8);
+$gradient3:linear-gradient(#032D76, #C0C0C0);
+$gradient4:linear-gradient(#822166, #ffffff);
+$gradient5:linear-gradient(#822166, #AFCEE8);
+$gradient6:linear-gradient(#822166, #c0c0c0);
+$gradient7:linear-gradient(#AFCEE8, #ffffff);
+$gradient8:linear-gradient(#AFCEE8, #822166);
+$gradient9:linear-gradient(#AFCEE8, #c0c0c0);
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  
+  .container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav{
+    display: flex;
+    list-style: none;
+    &__top{
+        margin-top: 60px;
+        &__logo{
+            width: 121px;
+            height: 69px;
+            padding-right: 151px;
+            margin-top: -30px;
+        } 
+
+        &__sslk{
+            text-decoration: none;
+            font-size: 14px;
+            font-family: Cinzel;
+            color: $color-blue-dark;
+            margin-right: 41px;
+        }
+    }
+  }
+ 
+  .profil{
+    font-weight: bold;
+    margin-left: 100px;
+  }
+
+/* модальное окно авторизации регистрации */
+.modal {
+    display: none; /* По умолчанию скрываем модальное окно */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: $color-white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid $color-gray;
+    width: 80%;
+    border-radius: 40px;
+    &__top{
+        margin-left: 61px;
+        
+        &__btn{
+            border: none;
+            background-color: $color-white;
+            &__reg{
+                
+                
+                font-family: Cinzel;
+                font-size: 36px;
+                font-weight: 400;
+                color: $color-blue-dark;
+                text-decoration: none;
+            }
+            &__vhod{
+                
+                margin-left: 52px;
+                font-family: Cinzel;
+                font-size: 36px;
+                font-weight: 400;
+                color: $color-gray;
+                text-decoration: none;               
+            }
+        }
+    }
+    &__form{
+        display: flex;
+        margin-top: 40px;
+        &__blok{
+            justify-content: space-between;
+            margin-right: auto;
+            margin-left: auto;
+            &__title{
+                font-family: Cinzel;
+                font-size: 20px;
+                font-weight: 400;
+                color: $color-blue-dark;
+                margin-bottom: 21px;
+            }
+            &__input{
+                width: 460px;
+                height: 70px;
+                border-radius: 10px;
+                border: 1px solid $color-gray;
+                box-shadow:0 1px 1px 1px $color-gray;
+                margin-bottom: 21px;
+            }
+        }
+    }
+    &__btn{
+        margin-top: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        border-radius: 20px;
+        background-color: $color-blue-dark;
+        width: 316px;
+        height: 81px;
+        &__sslk{
+            font-family: Cinzel;
+            font-size: 24px;
+            font-weight: bold;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+  }
+
+  .modalvhod {
+    display: none; /* По умолчанию скрываем модальное окно */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modalvhod-content {
+    background-color: $color-white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid $color-gray;
+    width: 80%;
+    border-radius: 40px;
+    &__top{
+        margin-left: 61px;
+        &__btn{
+            border: none;
+            background-color: $color-white;
+            &__reg{
+                font-family: Cinzel;
+                font-size: 36px;
+                font-weight: 400;
+                color: $color-gray;
+                text-decoration: none;
+            }
+            &__vhod{
+                margin-left: 52px;
+                font-family: Cinzel;
+                font-size: 36px;
+                font-weight: 400;
+                color: $color-blue-dark;
+                text-decoration: none;               
+            }
+        }
+    }
+    &__form{
+        margin-top: 40px;
+        text-align: center;
+        &__blok{
+            &__title{
+                font-family: Cinzel;
+                font-size: 20px;
+                font-weight: 400;
+                color: $color-blue-dark;
+                margin-bottom: 21px;
+            }
+            &__input{
+                width: 460px;
+                height: 70px;
+                border-radius: 10px;
+                border: 1px solid $color-gray;
+                box-shadow:0 1px 1px 1px $color-gray;
+                margin-bottom: 21px;
+            }
+        }
+    }
+    &__btn{
+        margin-top: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        border-radius: 20px;
+        background-color: $color-blue-dark;
+        width: 316px;
+        height: 81px;
+        &__sslk{
+            font-family: Cinzel;
+            font-size: 24px;
+            font-weight: bold;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: $color-blue-dark;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.sectionone{
+    margin-top: 38px;
+    &__img{
+        width: 1115px;
+        display: block;
+        margin: auto;
+    }
+
+}
+
+.slide-in {
+    animation: slideIn 0.1s forwards;
+  }
+  
+  .slide-out {
+    animation: slideOut 0.1s forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+.sectiontwo{
+    box-shadow:0 3px 3px 3px $color-gray;
+    position: relative;
+    margin-top: -150px;
+    width: 940px;
+    height: 256px;
+    border-radius: 40px;
+    border: 3px solid $color-gray;
+    background-color: $color-white;
+    &__blokone{
+        padding-top: 32px;
+        padding-left: 61px;
+        &__btn{
+            border: none;
+            background-color: $color-white;
+        }
+        &__poisk{
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Cinzel;
+            color: $color-blue-dark;
+            margin-right: 35px;
+        }
+        &__registr{
+            font-size: 16px;
+            font-family: Cinzel;
+            color: $color-gray;
+            text-decoration: none;
+        }
+    }
+    &__bloktwo{
+        display: flex;
+        margin-left: 126px;
+        margin-top: 68px;
+        &__pole{
+            &__text{
+                font-size: 12px;
+                font-family: Cinzel;
+                color: $color-blue-dark;
+                margin-bottom: 6px;
+            }
+            &__input{
+                width: 144px;
+                height: 37px;
+                border-radius: 10px;
+                border: 1px solid $color-gray;
+                box-shadow:0 1px 1px 1px $color-gray;
+                margin-right: 23px;
+            }
+        }
+        &__strelki{
+            width: 20px;
+            height: 10px;
+            border: none;
+            background-color: $color-white;
+            margin-right: 23px;
+            margin-top: 30px;
+        }
+        &__btn{
+            margin-top: 20px;
+            width: 144px;
+            height: 37px;
+            background-color: $color-blue-dark;
+            border: none;
+            border-radius: 10px;
+            &__sslk{
+                
+                font-size: 14px;
+                font-family: Cinzel;
+                font-weight: bold;
+                color: $color-white;
+                text-decoration: none;
+            }
+        }
+    }
+    &__blokthree{
+        padding-top: 32px;
+        margin-left: 126px;
+        display: flex;
+        &__box{
+            display: flex;
+            &__text{
+                font-size: 10px;
+                font-family: Cinzel;
+                font-weight: bold;
+                color: $color-blue-dark;
+                margin-right: 22px;
+            }
+            &__check{
+                margin-right: 8px;
+            }
+        }
+    }
+
+    
+}
+
+.sectiontworegistr{
+    display: none;
+    box-shadow:0 3px 3px 3px $color-gray;
+    position: relative;
+    margin-top: -150px;
+    width: 940px;
+    height: 256px;
+    border-radius: 40px;
+    border: 3px solid $color-gray;
+    background-color: $color-white;
+    &__btn{
+        border: none;
+        background-color: $color-white;
+    }
+    &__blokone{
+        padding-top: 32px;
+        padding-left: 61px;
+        &__poisk{
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Cinzel;
+            color: $color-gray;
+            margin-right: 35px;
+        }
+        &__registr{
+            font-size: 16px;
+            font-family: Cinzel;
+            color: $color-blue-dark;
+            text-decoration: none;
+        }
+    }
+    &__bloktwo{
+        display: flex;
+        margin-top: 43px;
+        margin-left: 183px;
+        &__input{
+            margin-right: 50px;
+            &__title{
+                font-size: 12px;
+                font-family: Cinzel;
+                color: $color-blue-dark;
+                margin-bottom: 6px;
+            }
+            &__pole{
+                width: 144px;
+                height: 37px;
+                border-radius: 10px;
+                border: 1px solid $color-gray;
+                box-shadow:0 1px 1px 1px $color-gray;
+                margin-right: 23px;
+            }
+        }
+        &__btn{
+            width: 186px;
+            height: 37px;
+            border: none;
+            background-color: $color-blue-dark;
+            border-radius: 10px;
+            margin-top: 20px;
+            &__sslk{
+                font-size: 14px;
+                font-family: Cinzel;
+                font-weight: bold;
+                color: $color-white;
+                text-decoration: none;
+            }
+        }
+    }
+    &__text{
+        margin-top: 43px;
+        text-align: center;
+        font-size: 13px;
+        font-family: Cinzel;
+        color: $color-blue-dark;
+    }
+}
+
+.sectionthree{
+    margin-top: 134px;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            font-size: 36px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+        }
+        &__sslk{
+            text-decoration: none;
+            font-size: 14px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+            padding-top: 10px;
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        &__sales{
+            width: 268px;
+            height: 336px;
+            border-color: $color-gray;
+            border-radius: 30px;
+            box-shadow:0 3px 3px 3px $color-gray;
+            &__gradient{
+                width: 268px;
+                height: 109px;
+                border-radius: 30px 30px 0 0;
+            }
+            &__text{
+                position: relative;
+                width: 230px;
+                height: 177px;
+                padding-left: 21px;
+                padding-top: 22px;
+                &__title{
+                    font-size: 20px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+                &__sslk{
+                    position: absolute;
+                    bottom: 0;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+            }
+        }
+        &__rasslk{
+            padding-top: 33px;
+            padding-left: 28px;
+            width: 240px;
+            height: 303x;
+            border-color: $color-gray;
+            border-radius: 30px;
+            box-shadow:0 3px 3px 3px $color-gray;
+            &__title{
+                font-size: 20px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__text{
+                margin-top: 37px;
+                font-size: 14px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__input{
+                margin-top: 8px;
+                width: 202px;
+                height: 37px;
+                border-radius: 10px;
+                border: 1px solid $color-gray;
+                box-shadow:0 1px 1px 1px $color-gray;
+            }
+            &__btn{
+                margin-top: 70px;
+                width: 202px;
+                height: 44px;
+                background-color: $color-blue-dark;
+                border: none;
+                border-radius: 10px;
+                &__sslk{
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+.onegradient{
+    background: $gradient1;
+}
+
+.twogradient{
+    background: $gradient2;
+}
+
+.threegradient{
+    background: $gradient3;
+}
+
+.fourgradient{
+    background: $gradient4;
+}
+
+.fivegradient{
+    background: $gradient5;
+}
+
+.sixgradient{
+    background: $gradient6;
+}
+
+.sevengradient{
+    background: $gradient7;
+}
+
+.eightgradient{
+    background: $gradient8;
+}
+
+.ninegradient{
+    background: $gradient9;
+}
+
+.sectionfour{
+    margin-top: 134px;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            font-size: 36px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+        }
+        &__sslk{
+            text-decoration: none;
+            font-size: 14px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+            padding-top: 10px;
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        &__news{
+            width: 268px;
+            height: 336px;
+            border-color: $color-gray;
+            border-radius: 30px;
+            box-shadow:0 3px 3px 3px $color-gray;
+            &__gradient{
+                margin-top: 20px;
+                width: 268px;
+                height: 109px;
+                border-radius: 0 0 30px 30px;
+            }
+            &__text{
+                position: relative;
+                width: 230px;
+                height: 177px;
+                padding-left: 21px;
+                padding-top: 38px;
+                &__title{
+                    font-size: 20px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+                &__sslk{
+                    position: absolute;
+                    bottom: 0;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+            }
+        }
+
+}
+}
+
+.sectionnapr{
+    margin-top: 134px;
+    &__title{
+        margin-top: -100px;
+        font-size: 40px;
+        font-family: Cinzel;
+        font-weight: boldd;
+        color: $color-purple;
+    }
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            font-size: 36px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+        }
+        &__sslk{
+            text-decoration: none;
+            font-size: 14px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-blue-dark;
+            padding-top: 10px;
+        }
+    }
+    &__blok{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        &__kart{
+            &__img{
+                width: 460px;
+                height: 288px;
+                border-radius: 30px;
+            }
+            &__gorod{
+                margin-top: 23px;
+                font-size: 24px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__strana{
+                margin-top: 5px;
+                font-size: 24px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-light;
+            }
+        }
+    }
+}
+
+.sectionfive{
+    margin-top: 100px;
+}
+
+.accordion a {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    color:  $color-blue-dark;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: Cinzel;
+  }
+  .accordion a:hover,
+  .accordion a:hover::after {
+    cursor: pointer;
+    color: $color-blue-light;
+  }
+
+  .accordion a.active {
+    color: $color-purple;
+    border-bottom: 1px solid $color-purple;
+  }
+  .accordion a::after {
+    font-family: Cinzel;
+    content: '+';
+    position: absolute;
+    float: right;
+    right: 1rem;
+    font-size: 40px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+  .accordion a.active::after {
+    font-family: Cinzel;
+    color: $color-purple;
+  }
+  .accordion .content {
+    opacity: 0;
+    padding: 0 1rem;
+    max-height: 0;
+  }
+  .accordion .content p {
+    font-size: 24px;
+    font-family: Cinzel;
+    color: $color-purple;
+    line-height: 2;
+    font-weight: 300;
+  }
+  .accordion .content.active {
+    opacity: 1;
+    padding: 1rem;
+    max-height: 100%;
+    -webkit-transition: all 0.35s ease 0.15s;
+    -o-transition: all 0.35s ease 0.15s;
+    transition: all 0.35s ease 0.15s;
+  }
+
+.sectionsix{
+    margin-top: 150px;
+    width: 940px;
+    height: 494px;
+    border-radius: 40px;
+    border: 3px solid $color-blue-dark;  
+    &__box{
+        margin-left: 32px;
+        margin-top: 35px;
+    &__title{
+        font-size: 32px;
+        font-family: Cinzel;
+        font-weight: 400;
+        color: $color-blue-dark;
+    }    
+    &__text{
+        margin-top: 7px;
+        margin-bottom: 31px;
+        font-size: 16px;
+        font-family: Cinzel;
+        font-weight: 400;
+        color: $color-blue-dark;
+    }
+    &__lable{
+        font-size: 16px;
+        font-family: Cinzel;
+        font-weight: 400;
+        color: $color-blue-dark;
+        margin-bottom: 6px;
+    }
+    &__input{
+        width: 865px;
+        height: 72px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        border: 1px solid $color-gray;
+    }
+    &__btn{
+        margin-left: 645px;
+        margin-top: 41px;
+        width: 220px;
+        height: 72px;
+        background-color: $color-blue-dark;
+        border: none;
+        border-radius: 15px;
+        &__sslk{
+            font-size: 20px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+    }
+
+}
+
+.footer{
+    padding-top: 50px;
+    margin-top: 130px;
+    height: 420px;
+    background-color: $color-blue-dark;
+    &__img{
+        display: block;
+        width: 421px;
+        height: 217px;
+        color: $color-white;
+        margin: auto;
+    }
+    &__nav{
+        display: flex;
+        list-style: none;
+        margin-top: 75px;
+        justify-content: space-between;
+        &__li{
+            font-size: 16px;
+            font-family: Cinzel;
+            font-weight: bold;
+            color: $color-white;
+        }
+    }
+}
+
+
+.news{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    &__title{
+        margin-top: 50px;
+        font-size: 40px;
+        font-family: Cinzel;
+        font-weight: bold;
+        color: $color-purple;
+    }
+    &__boxbig{
+        width: 624px;
+        height: 336px;
+        border-color: $color-gray;
+        border-radius: 30px;
+        box-shadow:0 3px 3px 3px $color-gray;
+        &__gradient{
+            margin-top: 20px;
+            width: 624px;
+            height: 109px;
+            border-radius: 0 0 30px 30px;
+        }
+        &__text{
+            position: relative;
+            width: 551px;
+            height: 177px;
+            padding-left: 21px;
+            padding-top: 38px;
+            &__title{
+                font-size: 20px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__sslk{
+                position: absolute;
+                bottom: 0;
+                text-decoration: none;
+                font-size: 14px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+        }
+    }
+    &__boxsmall{
+        width: 268px;
+        height: 336px;
+        border-color: $color-gray;
+        border-radius: 30px;
+        box-shadow:0 3px 3px 3px $color-gray;
+        &__gradient{
+            margin-top: 20px;
+            width: 268px;
+            height: 109px;
+            border-radius: 0 0 30px 30px;
+        }
+        &__text{
+            position: relative;
+            width: 230px;
+            height: 177px;
+            padding-left: 21px;
+            padding-top: 38px;
+            &__title{
+                font-size: 20px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__sslk{
+                position: absolute;
+                bottom: 0;
+                text-decoration: none;
+                font-size: 14px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+        }
+    }
+}
+
+.modalnews {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    &__content{
+        &__text{
+            font-family: Cinzel;
+            font-size: 24px;
+            font-weight: 400;
+            color: $color-blue-dark;
+            text-align: center;
+            line-height: 2;
+        }
+        &__close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: $color-gray;
+        }
+    }
+  }
+
+
+
+.sales{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    &__title{
+        margin-top: 20px;
+        font-size: 40px;
+        font-family: Cinzel;
+        font-weight: boldd;
+        color: $color-purple;
+    }
+    &__box{
+        width: 268px;
+            height: 336px;
+            border-color: $color-gray;
+            border-radius: 30px;
+            box-shadow:0 3px 3px 3px $color-gray;
+            &__gradient{
+                width: 268px;
+                height: 109px;
+                border-radius: 30px 30px 0 0;
+            }
+            &__text{
+                position: relative;
+                width: 230px;
+                height: 177px;
+                padding-left: 21px;
+                padding-top: 22px;
+                &__title{
+                    font-size: 20px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+                &__sslk{
+                    position: absolute;
+                    bottom: 0;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: Cinzel;
+                    font-weight: 400;
+                    color: $color-blue-dark;
+                }
+            }
+        }
+}
+
+.modalsales {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    &__content{
+        &__text{
+            font-family: Cinzel;
+            font-size: 24px;
+            font-weight: 400;
+            color: $color-blue-dark;
+            text-align: center;
+            line-height: 2;
+        }
+        &__close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: $color-gray;
+        }
+    }
+  }
+
+
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+.aboutUS{
+    &__sectionone{
+        &__img{
+            width: 583px;
+            height: 516px;
+            display: none;
+            margin: 0 auto;
+            margin-top: 85px;
+            border-radius: 30px;
+            opacity: 0;
+            animation: slide-in 0.5s forwards;
+        }
+        &__img.active{
+            display: block;
+            
+        }
+        &__text{
+            font-family: Cinzel;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            color: $color-blue-dark;
+            margin-top: 50px;
+        }
+    }
+    &__sectiontwo{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 114px;
+        &__box{
+            width: 300px;
+            height: 413px;
+            border: 3px solid $color-gray;
+            border-radius: 40px;
+            box-shadow:0 1px 1px 1px $color-gray;
+            &__title{
+                font-family: Cinzel;
+                font-size: 32px;
+                font-weight: bold;
+                color: $color-purple;
+                margin-top: 50px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            &__text{
+                margin: 0 auto;
+                width: 242px;
+                font-family: Cinzel;
+                font-size: 16px;
+                font-weight: 400;
+                color: $color-blue-dark;
+                text-align: center;
+            }
+        }
+    }
+
+    &__sectionthree{
+        margin-top: 82px;
+        &__title{
+            font-family: Cinzel;
+            font-size: 32px;
+            font-weight: bold;
+            color: $color-purple;
+        }
+        &__box{
+            display: flex;
+            justify-content: space-between;
+            &__blok{
+                margin-top: 49px;
+                display: flex;
+                &__text{
+                    margin-top: 35px;
+                    margin-left: 12px;
+                    &__title{
+                        margin-bottom: 9px;
+                        font-family: Cinzel;
+                        font-size: 24px;
+                        font-weight: 400;
+                        color: $color-blue-dark;
+                        &__sslk{
+                            color: $color-blue-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.onlineTablo{
+    &__title{
+        margin-top: 40px;
+        font-size: 40px;
+        font-family: Cinzel;
+        font-weight: boldd;
+        color: $color-purple;
+    }
+    &__blok{
+    height: 747px;
+    width: 100%;
+    border: 3px solid $color-blue-dark;
+    border-radius: 40px;
+    margin-top: 55px; 
+    display: flex;
+        &__gorod{
+            &__title{
+                margin-left: 150px;
+                margin-top: 32px;
+                font-size: 20px;
+                font-family: Cinzel;
+                font-weight: 400;
+                color: $color-blue-dark;
+            }
+            &__input{
+                margin-top: 10px;
+                margin-left: 150px;
+                width: 300px;
+                height: 77px;
+                border-radius: 20px;
+                border: 3px solid $color-gray;
+            }
+    }
+    &__btn{
+        width: 300px;
+        height: 77px;
+        background-color: $color-blue-dark;
+        border-radius: 20px;
+        border: none;
+        margin-top: 69px;
+        margin-left: 44px;
+        &__sslk{
+            font-size: 20px;
+            font-family: Cinzel;
+            font-weight: 400;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+
+}
+}
+
+
+.modalpopular {
+    display: none; /* По умолчанию модальное окно скрыто */
+    position: fixed; /* Фиксированное положение */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный чёрный цвет фона */
+    z-index: 1; /* Выше всех остальных элементов на странице */
+    &__content{
+        border-radius: 30px;
+        background-color: #fff;
+        width: 60%;
+        max-width: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;      
+        &__close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;            
+        } 
+        &__text{
+            font-family: Cinzel;
+            font-weight: 400;
+            font-size: 24px;
+            color: $color-blue-dark;
+            text-align: center;
+        }
+        &__title{
+            text-align: center;
+            font-family: Cinzel;
+            font-weight: bold;
+            font-size: 24px;
+            color: $color-blue-dark;
+            margin-bottom: 20px;
+        }
+        &__samolet{
+            width: 450px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        &__tabl{
+            display: flex;
+            justify-content: space-between;
+            &__colomn{
+                flex: 1;
+                padding: 0 10px;
+                text-align: center;
+                &__title{
+                    font-family: Cinzel;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: $color-purple;
+                    margin-bottom: 15px;
+                }
+                &__text{
+                    font-family: Cinzel;
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: $color-blue-dark; 
+                    margin-bottom: 8px;                   
+                }
+        }            
+        }
+
+    }
+  }
+
+
+  /* Медиазапросы для телефонов */
+@media (max-width: 430px) {
+    .container {
+        width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .nav{
+        display: flex;
+        list-style: none;
+        &__top{
+            margin-left: 10px;
+            &__logo{
+                display: none;
+            }    
+            &__sslk{
+                font-size: 9px;
+                margin-right: 15px;
+            }
+        }
+      }
+     
+      .profil{
+        margin-left: 50px;
+      }
+
+      /* модальное окно авторизации регистрации */
+.modal {
+    max-width: 430px;
+  }
+  
+  .modal-content {
+    &__top{
+        &__btn{
+            margin-bottom: 20px;
+            &__reg{
+                font-size: 24px;
+            }
+            &__vhod{
+                margin-left: 0;
+                font-size: 24px;
+            }
+        }
+    }
+    &__form{
+        display: contents;
+        &__blok{
+            &__title{
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            &__input{
+                width: 350px;
+                height: 30px;
+            }
+        }
+    }
+    &__btn{
+        margin-top: 20px;
+        width: 300px;
+        height: 50px;
+        &__sslk{
+            font-size: 12px;
+        }
+    }
+  }
+
+  .modalvhod {
+    max-width: 430px;
+  }
+
+  .modalvhod-content {
+    &__top{
+        margin-left: 0;
+        text-align: center;
+        &__btn{
+            &__reg{
+                font-size: 24px;
+            }
+            &__vhod{
+                margin-left: 0;
+                font-size: 24px;              
+            }
+        }
+    }
+    &__form{
+        margin-top: 40px;
+        text-align: center;
+        &__blok{
+            &__title{
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            &__input{
+                width: 350px;
+                height: 30px;
+            }
+        }
+    }
+    &__btn{
+        margin-top: 20px;
+        width: 300px;
+        height: 50px;
+        &__sslk{
+            font-size: 12px;
+        }
+    }
+  }
+
+  .sectionone{
+    &__img{
+        max-width: 400px
+    }
+}
+
+.sectiontwo{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -80px;
+    max-width:350px ;
+    height: 150px;
+    border-radius: 25px;
+    &__blokone{
+        padding-top: 10px;
+        padding-left: 20px;
+        &__poisk{
+            font-size: 12px;
+            margin-right: 15px;
+        }
+        &__registr{
+            font-size: 12px;
+        }
+    }
+    &__bloktwo{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        &__pole{
+            margin-left: 10px;
+            &__text{
+                font-size: 10px;
+            }
+            &__input{
+                width: 65px;
+                height: 25px;
+                border-radius: 5px;
+                margin-right: 15px;
+            }
+        }
+        &__strelki{
+            max-width: 10px;
+            height: auto;
+            margin-right: 15px;
+            margin-top: 15px;
+        }
+        &__btn{
+            width: 40px;
+            height: 25px;
+            border-radius: 5px;
+            &__sslk{    
+                font-size: 8px;
+            }
+        }
+    }
+    &__blokthree{
+        padding-top: 15px;
+        margin-left: auto;
+        margin-left: 10px;
+        &__box{
+            &__text{
+                font-size: 8px;
+                font-family: Cinzel;
+                font-weight: bold;
+                color: $color-blue-dark;
+                margin-right: 10px;
+            }
+            &__check{
+               max-width: 10px;
+            }
+        }
+    }
+    }
+    .sectiontworegistr{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -80px;
+        max-width:350px ;
+        height: 150px;
+        border-radius: 25px;
+        &__blokone{
+            padding-top: 10px;
+            padding-left: 20px;
+            &__poisk{
+                font-size: 12px;
+                margin-right: 15px;
+            }
+            &__registr{
+                font-size: 12px;
+            }
+        }
+        &__bloktwo{
+            display: flex;
+            margin-top: 20px;
+            margin-left: 15px;
+            &__input{
+                margin-right: 20px;
+                &__title{
+                    font-size: 10px;
+                }
+                &__pole{
+                    width: 80px;
+                    height: 25px;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                }
+            }
+            &__btn{
+                width: 80px;
+                height: 25px;
+                border-radius: 5px;
+                &__sslk{
+                    font-size: 6px;
+                }
+            }
+        }
+        &__text{
+            margin-top: 20px;
+            font-size: 10px;
+        }
+    }
+
+
+    .sectionthree{
+        margin-top: 50px;
+        &__top{
+            &__title{
+                font-size: 24px;
+                margin-left: 20px;
+            }
+        }
+    
+        &__bottom{
+            display: contents;
+            &__sales{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+            &__rasslk{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                &__btn{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .sectionfour{
+        margin-top: 50px;
+        &__top{
+            display: flex;
+            justify-content: space-between;
+            &__title{
+                font-size: 24px;
+                margin-left: 20px;
+            }
+        }
+    
+        &__bottom{
+            display: contents;
+            &__news{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+    
+    }
+    }
+    
+
+    .sectionnapr{
+        margin-top: 50px;
+        &__title{
+            margin-top: 30px;
+            font-size: 24px;
+            max-width: 350px;
+            margin-left: 25px;
+        }
+        &__top{
+            display: flex;
+            justify-content: space-between;
+            &__title{
+                font-size: 24px;
+            }
+        }
+        &__blok{
+            display: contents;
+            justify-content: space-between;
+            &__kart{
+                margin-top: 30px;
+                &__img{
+                    display: block;
+                    max-width: 350px;
+                    height: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &__gorod{
+                    font-size: 20px;
+                    margin-left: 45px;
+                }
+                &__strana{
+                    margin-left: 45px;
+                    font-size: 20px;
+
+                }
+            }
+        }
+    }
+
+    .accordion .content p {
+        font-size: 20px;
+      }
+
+      .accordion a {
+        max-width: 400px;
+        font-size: 24px;
+        font-weight: 400;
+        font-family: Cinzel;
+        padding: 0;
+        padding-top: 15px;
+        padding-left: 15px;
+      }
+      .accordion a::after {
+        display: none;
+      }
+
+      .sectionsix{
+        margin-top: 150px;
+        width: 400px;
+        height: 280px;
+        border-radius: 30px;
+        border: none; 
+        &__box{
+            margin-left: 10px;
+            margin-top: 10px;
+        &__title{
+            font-size: 20px;
+        }    
+        &__text{
+            margin-top: 7px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        &__lable{
+            font-size: 10px;
+        }
+        &__input{
+            width: 350px;
+            height: 30px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        &__btn{
+            margin-left: 132px;
+            margin-top: 19px;
+            width: 220px;
+            height: 40px;
+            border-radius: 10px;
+            &__sslk{
+                font-size: 12px;
+            }
+        }
+        }
+    
+    }
+
+    .footer{
+        margin-top: 50px;
+        height: 120px;
+        &__img{
+            display: block;
+            width: 130px;
+            height: 50px;
+            margin: auto;
+        }
+        &__nav{
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 25px;
+            &__li{
+                font-size: 10px;
+            }
+        }
+    }
+    
+
+    .news{
+        margin-top: 50px;
+        display: contents;
+        &__title{
+            margin-top: 20px;
+            font-size: 24px;
+            margin-left: 25px;
+        }
+        &__boxbig{
+            width: 400px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            &__gradient{
+                margin-top: 20px;
+                width: 400px;
+                height: 66px;
+            }
+            &__text{
+                width: 350px;
+            }
+        }
+        &__boxsmall{
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    }
+    
+    .modalnews {
+        &__content{
+            &__text{
+                font-size: 12px;
+            }
+            &__close{
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+        }
+      }
+
+      .sales{
+        margin-top: 50px;
+        display: contents;
+        &__title{
+            margin-top: 20px;
+            font-size: 24px;
+            margin-left: 25px;
+        }
+        &__box{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            }
+    }
+
+    .modalsales {
+        &__content{
+            &__text{
+                font-size: 12px;
+                line-height: 2;
+            }
+            &__close{
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+        }
+      }
+    
+      .aboutUS{
+        &__sectionone{
+            &__img{
+                width: 350px;
+                height: 300px;
+                margin-top: 45px;
+            }
+            &__text{
+                max-width: 400px;
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        &__sectiontwo{
+            display: contents;
+            margin-top: 50px;
+            &__box{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+        }
+    
+        &__sectionthree{
+            margin-top: 50px;
+            &__title{
+                font-size: 24px;
+                margin-left: 25px;
+            }
+            &__box{
+                display: contents;
+                &__blok{
+                    margin-top: 30px;
+                    display: flex;
+                    margin-left: 25px;
+                    &__img{
+                        width: 70px;
+                    }
+                    &__text{
+                        margin-top: 15px;
+                        margin-left: 12px;
+                        &__title{
+                            font-size: 16px;
+                            &__sslk{
+                                font-size: 16px
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .onlineTablo{
+        &__title{
+            font-size: 24px;
+            margin-left: 25px;
+        }
+        &__blok{
+            border: none;
+            &__gorod{
+                &__title{
+                    margin-left: 30px;
+                    margin-top: 32px;
+                    font-size: 16px;
+                }
+                &__input{
+                    margin-top: 10px;
+                    margin-left: 30px;
+                    width: 150px;
+                    height: 50px;
+                    border-radius: 10px;
+                    border: 1px solid $color-gray;
+                }
+        }
+        &__btn{
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            &__sslk{
+                font-size: 10px;
+            }
+        }
+    
+    }
+    }
+
+    .modalpopular {
+        &__content{
+         &__close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;            
+        } 
+        &__text{
+            font-size: 12px;
+        }
+        &__title{
+            margin-bottom: 15px;
+            font-size: 16px;
+
+        }
+        &__samolet{
+            width: 300px;
+        }
+        &__tabl{
+            display: none;          
+        }
+   
+        }
+        
+    }
+  
+
+}
+
+.formreg{
+    display: grid;
+    text-align: center;
+    margin-top: 20px;
+    &__input{
+        width: 400px;
+        height: 40px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        border-radius: 10px;
+        border: 1px solid $color-blue-dark;
+    }
+    &__btn{
+        margin-right: auto;
+        margin-left: auto;
+        width: 250px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: $color-blue-dark;
+        color: $color-white;
+    }
+    &__bot{
+        font-family: Cinzel;
+        font-size: 14px;
+        color: $color-blue-dark;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        &__sslk{
+            color: $color-purple;
+        }
+    }
+}
+
+.label{
+    font-family: Cinzel;
+    color: $color-blue-dark;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
